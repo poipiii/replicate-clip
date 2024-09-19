@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "replicate-clip"
+version = "0.1.0"
+description = ""
+authors = ["poipiii <nanosonico1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cog = "^0.9.23"
+transformers = "^4.44.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
