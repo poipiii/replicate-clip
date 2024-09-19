@@ -3,7 +3,7 @@
 
 build:
   # set to true if your model requires a GPU
-  gpu: true
+  gpu: false
 
   # a list of ubuntu apt packages to install
   # system_packages:
@@ -24,8 +24,11 @@ build:
 
   # commands run after the environment is setup
   run:
+    - "curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash"
+    - "apt-get install git-lfs -y"
+    - "git lfs install"
+    - "git clone https://huggingface.co/jinaai/jina-clip-v1 /weights"
     - "echo env is ready!"
-    - "echo another command if needed"
 
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"

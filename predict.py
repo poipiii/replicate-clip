@@ -8,7 +8,7 @@ from PIL import Image
 class Predictor(BasePredictor):
     def setup(self) -> None:
         """Load the model into memory to make running multiple predictions efficient"""
-        self.model =AutoModel.from_pretrained('jinaai/jina-clip-v1',trust_remote_code=True)
+        self.model =AutoModel.from_pretrained(pretrained_model_name_or_path="/weights",trust_remote_code=True)
     def predict(
         self,
         image_url: Path = Input(description="url of images to embed"),
